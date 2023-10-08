@@ -24,7 +24,7 @@ namespace ButterflyCatching
         {
             // Método que permite inicializar el juego completo de la interfaz.
 
-            Form1 juego = new Form1(); // Para el juego completo en general.
+            VentanaJuego juego = new VentanaJuego(); // Para el juego completo en general.
             juego.Show(); // Muestra la ejecución de la interfaz del juego.
         }
     }
