@@ -12,6 +12,17 @@ namespace ButterflyCatching
 {
     public partial class VentanaJuego : Form
     {
+        // Variables a declarar en esta clase.
+
+        float tiempoRestante = 10f; // Se acelera el tiempo en velocidad de 10 frames por segundo.
+        int mariposasAtrapadas = 0; // La cantidad de mariposas atrapadas se inicializa en 0.
+        int detectorTiempo = 0; // Se debe detectar el temporizador para validar la ejecución del sistema.
+        int detectorLimite = 0; // Los límites tienen que detectarse para verificar las conidiciones que posee durante la ejecución del juego.
+        List<Mariposa> lista_Mariposa = new List<Mariposa>(); // Las mariposas se agrupan mediante una lista de arreglos por imágenes cargadas en el proyecto.
+        Random rnd = new Random(); // Variable aleatoria.
+
+        Image[] imagenes_mariposas = { Properties.Resources._01, Properties.Resources._02, Properties.Resources._03, Properties.Resources._04, Properties.Resources._05, Properties.Resources._06, Properties.Resources._07, Properties.Resources._08, Properties.Resources._09, Properties.Resources._10 };
+
         public VentanaJuego()
         {
             InitializeComponent();
