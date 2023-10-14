@@ -39,7 +39,20 @@ namespace ButterflyCatching
 
         private void HacerClickEvento(object sender, EventArgs e)
         {
-            // EN INSTANTES...
+            // Método que permite resolver un algoritmo al hacer click en cualquier parte de la ventana de ejecución del juego.
+
+            // Crearemos una iteración "foreach" para que el usuario pueda realizar acciones con varias mariposas.
+
+            foreach (Mariposa mariposa in lista_Mariposa.ToList())
+            {
+                MouseEventArgs raton = (MouseEventArgs)e; // Añadiremos un control para atrapar las mariposas en la ventana de ejecución del juego.
+
+                if (raton.X >= mariposa.posicionX && raton.Y >= mariposa.posicionY && raton.X < mariposa.posicionX + mariposa.ancho && raton.Y < mariposa.posicionY + mariposa.altura)
+                {
+                    lista_Mariposa.Remove(mariposa); // Elimina una mariposa dentro de la lista.
+                    mariposasAtrapadas++; // Atrapadas las mariposas que se encuentren en su alrededor.
+                }
+            }
         }
 
         // Evento para los colores de la interfaz visual del juego.
