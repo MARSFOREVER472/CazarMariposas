@@ -59,7 +59,18 @@ namespace ButterflyCatching
 
         private void EventoPaint(object sender, PaintEventArgs e)
         {
-            // EN INSTANTES...
+            // Evento para editar gráficas simples a la interfaz del juego.
+
+            ImageAnimator.UpdateFrames(); // Las imágenes estarán con extensión .gif.
+
+            // Y esto podría suceder solamente con todas las mariposas.
+
+            foreach (Mariposa mariposa in lista_Mariposa)
+            {
+                // Se definen gráficas mediante atributos a cada mariposa.
+
+                e.Graphics.DrawImage(mariposa.imagen_mariposa, mariposa.posicionX, mariposa.posicionY, mariposa.ancho, mariposa.altura);
+            }
         }
 
         // Método para crear una mariposa a partir de una imagen
