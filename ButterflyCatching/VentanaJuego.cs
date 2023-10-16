@@ -104,7 +104,16 @@ namespace ButterflyCatching
 
         private void ReiniciarJuego()
         {
-            // EN INSTANTES...
+            // Método que permite reiniciar el juego en un período determinado de tiempo.
+
+            this.Invalidate(); // Permite cambiar de escena al ejecutar cualquier acción.
+            lista_Mariposa.Clear(); // Elimina todas las mariposas de la escena al reiniciar el juego.
+            mariposasAtrapadas = 0; // Se inicializa en 0 el contador de las mariposas atrapadas.
+            tiempoRestante = 60f; // Se contabiliza esta acción por 1 minuto aprox.
+            detectorTiempo = 0; // Se tiene que tomar en cuenta la detección de contabilizador de tiempo al realizar cualquier acción durante su ejecución.
+            lblTemporizador.Text = "Tiempo restante: 00";
+            lblCantMariposas.Text = "Mariposas atrapadas: 0";
+            GameTimer.Start(); // Inicializa el juego.
         }
 
         // Método para finalizar la partida.
