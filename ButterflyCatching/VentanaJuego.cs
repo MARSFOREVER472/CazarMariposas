@@ -77,7 +77,20 @@ namespace ButterflyCatching
 
         private void CrearMariposa()
         {
-            // EN INSTANTES...
+            // Método para poder crear mariposas a partir de imágenes .gif
+
+            // Las imágenes de la mariposa pueden variar en la misma posición.
+
+            int i = rnd.Next(imagenes_mariposas.Length);
+
+            Mariposa nuevaMariposa = new Mariposa(); // Crearemos una mariposa y otras más...
+            nuevaMariposa.imagen_mariposa = imagenes_mariposas[i]; // Guarda en una posición determinada para cada mariposa.
+            nuevaMariposa.posicionX = rnd.Next(50, this.ClientSize.Width - 200); // Ancho de la mariposa mediante su posición en X.
+            nuevaMariposa.posicionY = rnd.Next(50, this.ClientSize.Height - 200); // Altura de la mariposa mediante su posición en Y.
+            lista_Mariposa.Add(nuevaMariposa); // Añade una mariposa a la lista.
+            ImageAnimator.Animate(nuevaMariposa.imagen_mariposa, this.OnFrameChangedHandler); // Animación de las imágenes por extensión (.gif).
+
+
         }
 
         // Soporte para la interfaz del juego.
