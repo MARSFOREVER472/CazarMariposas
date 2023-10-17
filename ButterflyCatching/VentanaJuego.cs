@@ -120,7 +120,11 @@ namespace ButterflyCatching
 
         private void JuegoTerminado()
         {
-            // EN INSTANTES...
+            // Método sencillo para crear al momento de finalizar la partida.
+
+            GameTimer.Stop(); // Frena la ejecución del juego.
+            MessageBox.Show("SE ACABÓ EL TIEMPO, CAZASTE " + mariposasAtrapadas + " MARIPOSAS!, PRESIONA OK PARA JUGAR OTRA VEZ!");
+            ReiniciarJuego(); // Llama al método para reiniciar el juego.
         }
     }
 }
