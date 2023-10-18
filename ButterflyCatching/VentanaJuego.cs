@@ -32,7 +32,68 @@ namespace ButterflyCatching
 
         private void EventoTemporizador(object sender, EventArgs e)
         {
-            // EN INSTANTES...
+            // Este proceso será muy gigante que los demás eventos.
+
+            lblTemporizador.Text = "TIEMPO RESTANTE: " + tiempoRestante.ToString("#") + ".s";
+            lblCantMariposas.Text = "Mariposas atrapadas: " + mariposasAtrapadas;
+            tiempoRestante -= 0.03f;
+
+            if (lista_Mariposa.Count < detectorLimite)
+            {
+                detectorTiempo--;
+
+                if (detectorTiempo < 1)
+                {
+                    CrearMariposa();
+                    detectorTiempo = detectorLimite;
+                }
+            }
+
+            foreach (Mariposa mariposa in lista_Mariposa)
+            {
+                mariposa.MoverMariposa(); // Llama al método para mover una mariposa.
+
+                mariposa.posicionX += mariposa.velocidadX; // La posición de la mariposa incrementará su velocidad horizontalmente de 0 a 1 en X.
+
+                if (mariposa.posicionX < 0 || mariposa.posicionX + mariposa.ancho > this.ClientSize.Width)
+                {
+                    mariposa.velocidadX = -mariposa.velocidadX; // Reduce la velocidad de la mariposa horizontalmente en X.
+
+                    if (mariposa.posicionX < 0)
+                    {
+                        mariposa.posicionX = mariposa.posicionX + 10;
+                    }
+
+                    else if (mariposa.posicionX + mariposa.ancho > this.ClientSize.Width)
+                    {
+                        mariposa.posicionX = mariposa.posicionX - 10;
+                    }
+                }
+
+                mariposa.posicionY += mariposa.velocidadY;
+
+                if (mariposa.posicionY < 0 || mariposa.posicionY + mariposa.altura > this.ClientSize.Height)
+                {
+                    mariposa.velocidadY = -mariposa.velocidadY;
+
+                    if (mariposa.posicionY < 0)
+                    {
+                        mariposa.posicionY = mariposa.posicionY + 10;
+                    }
+
+                    else if (mariposa.posicionY + mariposa.altura > this.ClientSize.Height - 50)
+                    {
+                        mariposa.posicionY = mariposa.posicionY - 10;
+                    }
+                }
+            }
+
+            if (tiempoRestante < 1)
+            {
+                JuegoTerminado();
+            }
+
+            this.Invalidate();
         }
 
         // Evento para hacer click a toda la ventana del juego.
