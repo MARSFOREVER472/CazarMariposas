@@ -1,6 +1,6 @@
 # CazarMariposas
 
-En este tutorial crearemos un juego de Cazar Mariposas en C# y Windows Forms en Visual Studio:
+_En este tutorial crearemos un juego de Cazar Mariposas en C# y Windows Forms en Visual Studio:_
 
 - Con esto será una colección de todos los métodos que hemos usado en los tutoriales anteriores y podremos generar diferentes imágenes GIF usando la clase Image and Image Animator en C#.
 - Usaremos principios de programación orientada a objetos para crear una clase mariposa y luego usaremos esa clase para crear un objeto mariposa en el juego y animarlo y moverlo usando el componente de temporizador.
