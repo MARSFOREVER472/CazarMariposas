@@ -8,4 +8,4 @@ _En este tutorial crearemos un juego de Cazar Mariposas en C# y Windows Forms en
 
 _Espero que disfrutes trabajando en este proyecto y comencemos a trabajar en ello._
 
-__Kind regards_
+_Kind regards_
